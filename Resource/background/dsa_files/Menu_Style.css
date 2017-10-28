@@ -1,0 +1,73 @@
+/*********************************************
+Note : 안내테스크 색상
+*********************************************/
+.Default_backColor,#CSpaper_Menu a,#CSpager_Layer .title strong {background-color:#bf1e2e;}
+.Default_textColor {color:#bf1e2e;}
+
+/*********************************************
+Note : 기본레이아웃
+*********************************************/
+/* 로고 */
+#HeadLogo {overflow:hidden; width:100%; margin:10px 0;}
+#HeadLogo,#HeadLogo td {height:90px;}
+/* 메뉴 */
+#HeadMenu {overflow:hidden; width:100%; height:67px;}
+/* 기본영역정의(960px) */
+#Default_Warp {overflow:hidden; width:960px; margin:0 auto;}
+
+#Default_Warp a:hover {text-decoration:none;}
+
+/*********************************************
+Note : 메뉴바
+*********************************************/
+#MenuBar {position:relative; overflow:hidden; width:960px; height:67px; background:url('./Default_MenuBar.png') no-repeat left top; text-align:left; letter-spacing:-1px;}
+ul.mega-menu li.megaline,ul.mega-menu li.megaline ul li.sub {float:left; overflow:visible;}
+ul.mega-menu a,ul.mega-menu strong {float:left;}
+ul.mega-menu strong {overflow:hidden;}
+
+/* 1차섹션 */
+ul.mega-menu {position:absolute; overflow:hidden; width:959px; left:1px;}
+ul.mega-menu li.megaline {height:67px;}
+/* 1차섹션(아웃) */
+ul.mega-menu li.megaline a {color:#fff; font-size:14px; font-family:'Malgun Gothic'; line-height:34px;}
+ul.mega-menu li.megaline a strong {height:36px; padding:0 20px; cursor:pointer;}
+/* 1차섹션(오버) */
+ul.mega-menu li.megaline a:hover,.a-menu-back {}
+ul.mega-menu li.megaline a:hover strong,.s-menu-back {background:url("./Default_MenuBar.png") no-repeat center -67px; color:#bf1e2e;}
+/* 2차섹션 */
+ul.mega-menu li.megaline ul {position:absolute; overflow:hidden; display:none; width:960px; height:31px; top:36px;}
+ul.mega-menu li.megaline ul li.sub {padding:0 10px; background:url('./Default_Icon.png') no-repeat left -102px;}
+ul.mega-menu li.megaline ul li.nobr {background:none;}
+ul.mega-menu li.megaline ul li.sub a {height:31px; color:#777; font-size:12px; font-family:'dotum'; line-height:32px; line-height:36px\9; line-height:36px\0;}
+ul.mega-menu li.megaline ul li.sub a:hover {color:#444;}
+
+/*********************************************
+Note : 최종편집
+*********************************************/
+.update {display:block; overflow:hidden; height:18px; color:#595959; font-size:11px; font-family:'dotum'; line-height:18px; margin-bottom:10px}
+.update strong {color:#ca3906;}
+
+/*********************************************
+Note : 기사검색
+*********************************************/
+#SearchForm {position:absolute; overflow:hidden; height:26px; right:1px; top:5px;}
+#SearchForm fieldset,#SearchForm form,#SearchForm input,#SearchForm button {float:left; overflow:hidden; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+#SearchForm fieldset,#SearchForm form {height:26px; background:url('./Default_Icon.png') no-repeat;}
+#SearchForm fieldset {background-position:left 0; padding-left:15px; margin-right:3px;}
+#SearchForm input,#SearchForm button {height:26px; border:0;}
+#SearchForm input {width:190px; color:#535353; font-size:12px; line-height:32px;}
+#SearchForm input.inptxt {color:#747474; font-size:11px; font-family:'dotum'; letter-spacing:-1px;}
+#SearchForm button {width:39px; background:url('./Default_Icon.png') no-repeat left -26px; line-height:100pt; cursor:pointer;}
+
+/*********************************************
+Note : 로그인(SNS)
+*********************************************/
+#LoginBtn {position:absolute; right:0; top:36px; background-color:#fff;}
+#LoginBtn ul,#LoginBtn ul li {float:left; overflow:hidden; height:30px;}
+#LoginBtn ul li {padding:0 8px; background:url('./Default_Icon.png') no-repeat left -103px; letter-spacing:-1px;}
+#LoginBtn ul li.nobr {background:none;}
+#LoginBtn ul li.pdbr {background:none; padding:0 1px;}
+#LoginBtn ul li a {color:#747474; font-size:11px; font-family:'dotum'; line-height:30px; line-height:34px\9; line-height:34px\0;}
+#LoginBtn a.sns_twi {float:left; overflow:hidden; width:19px; background:url('./Default_Icon.png') no-repeat 0 -67px; line-height:300pt;}
+#LoginBtn a.sns_fac {float:left; overflow:hidden; width:19px; background:url('./Default_Icon.png') no-repeat -100px -67px; line-height:300pt;}
+#LoginBtn a.sns_rss {float:left;  overflow:hidden;width:19px; background:url('./Default_Icon.png') no-repeat -200px -67px;  line-height:300pt;}
