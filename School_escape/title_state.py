@@ -1,15 +1,23 @@
 import game_framework
 from pico2d import *
 import main_state
+import pygame
+
 import random
+pygame.mixer.init()
 
 name = "TitleState"
-image = None  #배경
+image = None   #배경
 image_2 = None #글씨
-image_3 = None #테두리
+image_3 = None  #테두리
 edge_num = 0
 num = 1.0
 count = 0.001
+
+title_move = None
+title_click = None
+title_main = None
+title_exit = None
 
 New_game_button = False
 Continue_game_button = False
@@ -18,13 +26,29 @@ Exit_game_button = False
 
 def enter():
     global image, image_2, image_3
+    global title_main, title_click, title_exit, title_move
     image = load_image('image\\background.png')
     image_2 = load_image('image\\title_02.png')
     image_3 = load_image('image\\edge_01.png')
 
+    title_move = pygame.mixer.Sound("sound\\title_move.wav")
+    title_click = pygame.mixer.Sound("sound\\title_click.wav")
+    title_main = pygame.mixer.Sound("sound\\title_main.wav")
+    title_exit = pygame.mixer.Sound("sound\\title_exit.wav")
+
+    title_main.play()
+
 def exit():
-    global image,image_2
-    del(image,image_2)
+    global image,image_2, image_3
+    global title_main, title_click, title_exit, title_move
+
+    title_main.stop()
+    title_exit.stop()
+    title_move.stop()
+    title_click.stop()
+
+    del(image, image_2, image_3)
+    del(title_main, title_click, title_exit, title_move)
 
 
 def handle_events():
@@ -38,18 +62,28 @@ def handle_events():
                 game_framework.quit()
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_DOWN):
                 if edge_num <= 0 and edge_num > -150:
+                    title_move.play()
                     edge_num -= 50
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
                 if edge_num >= -150 and edge_num < 0:
+                    title_move.play()
                     edge_num += 50
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_z):
                 if New_game_button:
+                    title_click.play()
+                    delay(1.0)
                     game_framework.change_state(main_state)
                 elif Continue_game_button:
+                    title_click.play()
+                    delay(1.0)
                     pass
                 elif Edit_game_button:
+                    title_click.play()
+                    delay(0.5)
                     pass
                 elif Exit_game_button:
+                    title_exit.play()
+                    delay(0.5)
                     game_framework.quit()
 
 

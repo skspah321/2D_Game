@@ -25,7 +25,6 @@ def update():
 
     if(logo_time > 1.0):
         logo_time = 0
-        #game_framework.quit()   , 원래는 시간이 되면 종료 했는데 이젠 title로 바꿔준다
         game_framework.push_state(title_state)
     delay(0.01)
     logo_time +=0.05
