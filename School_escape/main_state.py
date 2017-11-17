@@ -15,7 +15,7 @@ boy = None
 glass = None
 Running = True
 
-current_time = 0.0
+#current_time = 0.0
 
 class Grass:
     def __init__(self):
@@ -26,8 +26,7 @@ class Grass:
 
 
 def enter():
-    global boy,glass, current_time
-    current_time = get_time()
+    global boy,glass
     glass = Grass()
     boy = Character.Charater()
 
@@ -46,8 +45,8 @@ def resume():
     pass
 
 
-def handle_events():
-    global Running, current_time
+def handle_events(frame_time):
+    global Running#, current_time
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -57,12 +56,10 @@ def handle_events():
         else:
             boy.handle_event(event)
 
-def update():
-    global current_time
-    frame_time = get_frame_time()
-    handle_events()
-
-
+def update(frame_time):
+    #global current_time
+    #frame_time = get_frame_time()
+    handle_events(frame_time)
     boy.update(frame_time)
     #print(frame_time)
 
@@ -71,7 +68,7 @@ def draw_main_scene():
     boy.draw()
 
 
-def draw():
+def draw(frame_time):
    # Game Rendering
    clear_canvas()
    glass.draw()

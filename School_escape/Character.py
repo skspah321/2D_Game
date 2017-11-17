@@ -24,6 +24,7 @@ class Charater:
             Charater.image = load_image('image\\main_character.png')
 
 
+
     def update(self, frame_time):
         distance = Charater.RUN_SPEED_PPS * frame_time
         self.frame = (self.frame + 1) % 4

@@ -51,7 +51,7 @@ def exit():
     del(title_main, title_click, title_exit, title_move)
 
 
-def handle_events():
+def handle_events(frame_time):
     global edge_num
     events = get_events()
     for event in events:
@@ -83,13 +83,14 @@ def handle_events():
                     pass
                 elif Exit_game_button:
                     title_exit.play()
-                    delay(0.5)
+                    title_exit.play()
+                    delay(1.0)
                     game_framework.quit()
 
 
 
 
-def draw():
+def draw(frame_time):
     global num,edge_num
     clear_canvas()
     image.draw(400,300,870,680)
@@ -101,7 +102,7 @@ def draw():
 
 
 
-def update():
+def update(frame_time):
     global num, count, edge_num
     global New_game_button, Continue_game_button, Edit_game_button, Exit_game_button
     num -= count
